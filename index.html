@@ -5,11 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wordale!!</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <herader> </herader>
+    <header>
+      <div class="info-bar">
+         <div class="info-bar__icons">
+          <img src="assets/menu.svg" alt="" />
+          <img src="assets/questionMark.svg" alt="" />
+        <img src="assets/chart-bar.svg" alt="" />
+        <img src="assets/setting.svg" alt="" />
+        </div>
+        <div class="infor-bar__name">Wordale</div>
+
+      </div>
+      </div>
+    </header>
     <main>
+      <div id="timer">00:00</div>
       <div class="board-row row-0">
         <div class="board-column" date-index="00"></div>
         <div class="board-column" date-index="01"></div>
@@ -89,5 +102,6 @@
             <div class="keyboard-column wide" data-key="BACK">BACK</div>
         </div>
     </footer>
+    <script src="js/index.js"></script>
   </body>
 </html>
