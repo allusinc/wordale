@@ -13,16 +13,16 @@ function appStart() {
     document.body.appendChild(div);
   };
 
-  const nextLine = () => {
-    if (attempts === 6) return;
-    attempts += 1;
-    index = 0;
-  };
-
   const gameover = () => {
     window.removeEventListener("keydown", handleKeydown);
     displayGameover();
     clearInterval(timer);
+  };
+
+  const nextLine = () => {
+    if (attempts === 6) return gameover();
+    attempts += 1;
+    index = 0;
   };
 
   const handleEnterKey = () => {
@@ -42,7 +42,7 @@ function appStart() {
       block.style.color = "white";
     }
 
-    if (맞은_갯수 === 5) gameover;
+    if (맞은_갯수 === 5) gameover();
     else nextLine();
   };
   const handleBackSpace = () => {
@@ -61,6 +61,7 @@ function appStart() {
     const thisBlock = document.querySelector(
       `.board-column[data-index='${attempts}${index}']`
     );
+
     if (event.key === "Backspace") handleBackspace();
     else if (index === 5) {
       if (event.key === "Enter") handleEnterKey();
